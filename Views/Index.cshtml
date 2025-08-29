@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Résultat Resolve";
+}
+
+<h1>Résultat du Resolve</h1>
+
+<p><strong>Token reçu :</strong> @ViewBag.Token</p>
+
+<h3>Détails de la souscription :</h3>
+<pre>@ViewBag.SubscriptionData</pre>
+
+@if (ViewBag.SubscriptionData != null)
+{
+    <form method="get" action="/Landing/Activate">
+        <label for="subscriptionId">Subscription ID :</label>
+        <input type="text" name="subscriptionId" placeholder="Copie depuis JSON">
+        <button type="submit">Activer</button>
+    </form>
+}
